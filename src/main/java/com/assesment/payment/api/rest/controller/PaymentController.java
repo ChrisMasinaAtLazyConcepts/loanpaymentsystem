@@ -34,7 +34,7 @@ public class PaymentController {
         }
 
         try{
-            Payment newPayment = paymentService.save(payment);
+            Payment newPayment = paymentService.createPayment(payment);
         }catch(LoanValidationException exception){
             return new ResponseEntity<>(exception.getMessage(), HttpStatus.OK);
         }

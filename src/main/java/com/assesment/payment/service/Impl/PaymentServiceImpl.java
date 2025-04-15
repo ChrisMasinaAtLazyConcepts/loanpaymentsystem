@@ -35,10 +35,10 @@ public class PaymentServiceImpl implements PaymentService{
                 loanValue.setLoanStatus(LoanStatus.SETTLED);
             }
             loanRepository.save(loanValue);
-            logger.info("Updated Loan amount, saving payment: " + payment)
+            logger.info("Updated Loan amount, payment sucessfully captured: " + payment)
             return payment;
         } else {
-           throw new RuntimeException("Corresponding Loan not found",HttpStatus.BAD_REQUEST);
+           throw new PaymentValidationException("oops the corresponding Loan was not found",HttpStatus.BAD_REQUEST);
         }
         return null;
     }
