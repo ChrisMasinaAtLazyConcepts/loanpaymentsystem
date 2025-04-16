@@ -38,7 +38,7 @@ public class LoanPaymentApplicationTests {
     
         when(loanRepository.save(any())).thenReturn(loan);
     
-        Loan savedLoan = loanRepository.save(new Loan());
+        Loan savedLoan = loanRepository.save(loan);
         assertNotNull(savedLoan);
         assertEquals(BigDecimal.valueOf(1000), savedLoan.getLoanAmount());
         assertEquals(LoanStatus.ACTIVE, savedLoan.getStatus());
