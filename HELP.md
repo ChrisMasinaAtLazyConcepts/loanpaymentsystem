@@ -1,63 +1,111 @@
-# Loan Payment Application
+# 🏦 Loan Payment Application
 
-## Building and Running the Application
+A modern, secure loan payment processing system built with Spring Boot.
 
-### Prerequisites
+## 📋 Table of Contents
 
-* Java 1.8 or later
-* Maven
-* Spring Boot
+- [Prerequisites](#prerequisites)
+- [Building](#building)
+- [Running](#running)
+- [API Documentation](#api-documentation)
+- [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
 
-### Building the Application
+## 🛠 Prerequisites
 
-To build the application, navigate to the project root directory and run the following command:
+Before you begin, ensure you have the following installed:
 
+- ☕ Java 1.8 or later
+- 📦 Maven
+- 🌱 Spring Boot
+
+## 🏗 Building
+
+Navigate to the project root directory and run:
+
+```bash
 mvn clean package
+```
 
-### Running the Application
+## 🚀 Running
 
-To run the application, navigate to the project root directory and run the following command:
+### Option 1: Using Maven
 
-mvn spring-boot:run 
+```bash
+mvn spring-boot:run
+```
 
-You can also run the application using the generated JAR file:
+### Option 2: Using JAR
 
+```bash
 java -jar target/loan-payment-application.jar
+```
 
-### Accessing the Application
+The application will be available at:
+> 🌐 [http://localhost:8080](http://localhost:8080)
 
-Once the application is running, you can access it at http://localhost:8080. You can use a tool like Postman or cURL to test the API endpoints.
+## 📚 API Documentation
 
-Swagger UI
+### Swagger UI
 
-The application includes Swagger UI, which provides a graphical interface for testing the API endpoints. You can access Swagger UI at http://localhost:8080/v2/api-docs.
+Explore and test the API using Swagger UI:
+> 📘 [http://localhost:8080/v2/api-docs](http://localhost:8080/v2/api-docs)
 
+## 💡 Examples
 
-Example Request
+### Loan Request
 
-Loan
+```json
 {
   "loanId": 1,
   "loanAmount": 1000.00,
   "term": 12,
   "status": "ACTIVE"
 }
+```
 
-Payment
+### Payment Request
+
+```json
 {
   "paymentId": 1,
   "loanId": 1,
   "paymentAmount": 500.00
 }
+```
 
-Example Loan Response
+### Loan Response
+
+```json
 {
-	"loanId": 1,
-	"loanAmount": 0,
-	"term": 12,
-	"status": "SETTLED"
+  "loanId": 1,
+  "loanAmount": 0,
+  "term": 12,
+  "status": "SETTLED"
 }
+```
 
-Troubleshooting
+## ⚠️ Troubleshooting
 
-If you encounter any issues while building or running the application, check the console output for error messages. You can also try cleaning the project directory and rebuilding the application.
+If you encounter issues:
+
+1. Check console output for error messages
+2. Verify all prerequisites are installed correctly
+3. Try cleaning the project:
+   ```bash
+   mvn clean
+   ```
+4. Rebuild the application:
+   ```bash
+   mvn clean package
+   ```
+
+## 🔒 Security
+
+- All endpoints DONT require authentication
+- 
+## 📊 Monitoring
+
+The application includes:
+- Health checks at `/actuator/health`
+- Metrics at `/actuator/metrics`
