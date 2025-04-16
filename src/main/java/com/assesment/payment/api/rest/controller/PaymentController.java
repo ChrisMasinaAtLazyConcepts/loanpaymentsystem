@@ -29,13 +29,13 @@ public class PaymentController {
             throw new LoanValidationException("LoanId cannot be empty", HttpStatus.BAD_REQUEST);
         }
         if(payment.getPaymentAmount() == null ){
-            throw new LoanValidationException("payment amount cannot be empyty", HttpStatus.BAD_REQUEST);
+            throw new LoanValidationException("payment amount cannot be empty", HttpStatus.BAD_REQUEST);
         }
 
         try{
              newPayment = paymentService.createPayment(payment);
         }catch(LoanValidationException exception){
-            return new ResponseEntity( HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(newPayment, HttpStatus.OK);
     }
