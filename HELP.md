@@ -1,6 +1,6 @@
 # 🏦 Loan Payment Application
 
-A modern, secure loan payment processing system built with Spring Boot.
+loan payment processing system built with Spring Boot.
 
 ## 📋 Table of Contents
 
