@@ -27,20 +27,17 @@ public class PaymentService {
     @Autowired
     LoanRepository loanRepository;
 
-    public PaymentService(  ){                       
+    public PaymentService(){                       
     }
 
-    public Payment createPayment(Payment payment){
+   public Payment createPayment(Payment payment){
         Loan loan = loanRepository.findByLoanId(payment.getLoanId()).get();
         if (loan != null) {
             if (payment.getPaymentAmount().compareTo(loan.getLoanAmount()) > 0) {
                 throw new PaymentValidationException("Failed to process loan payment as the payment amount exceeds the remaining loan" +
                  "balance, please pay outstanding balance of :" + loan.getLoanAmount(),HttpStatus.BAD_REQUEST);
             }
-            if(loan.getStatus() == LoanStatus.SETTLED){
-                throw new PaymentValidationException("Failed to process loan payment as the loan is already settled",HttpStatus.BAD_REQUEST);
-            }
-
+        
             loan.setLoanAmount(loan.getLoanAmount().subtract(payment.getPaymentAmount()));
             if (loan.getLoanAmount().compareTo(BigDecimal.ZERO) == 0) {
                 loan.setStatus(LoanStatus.SETTLED);
@@ -52,6 +49,8 @@ public class PaymentService {
            throw new PaymentValidationException("oops the corresponding Loan was not found",HttpStatus.BAD_REQUEST);
         }
     }
+
+
 
 
 }
