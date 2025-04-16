@@ -1,5 +1,6 @@
-package com.assesment.loan.controller.exception;
+package com.assesment.payment.api.rest.controller.exception;
 
+import org.springframework.http.HttpStatus;
 
 public class PaymentValidationException extends RuntimeException {
     private final String message;
@@ -19,4 +20,16 @@ public class PaymentValidationException extends RuntimeException {
         return httpStatus;
     }
 
+}
+
+class ErrorResponse {
+    private final String message;
+
+    public ErrorResponse(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

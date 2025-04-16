@@ -4,14 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Enumerated;
-import javax.persistence.EnumType;
+import javax.persistence.Table;
 import java.math.BigDecimal;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "payments")
 public class Payment{
@@ -24,8 +19,27 @@ public class Payment{
 
     private BigDecimal paymentAmount;
 
-    private LocalDate createdDate;
+    public Long getPaymentId() {
+        return paymentId;
+    }
     
-    private LocalDate updatedDate;
-
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
+    }
+    
+    public Long getLoanId() {
+        return loanId;
+    }
+    
+    public void setLoanId(Long loanId) {
+        this.loanId = loanId;
+    }
+    
+    public BigDecimal getPaymentAmount() {
+        return paymentAmount;
+    }
+    
+    public void setPaymentAmount(BigDecimal paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
 }
