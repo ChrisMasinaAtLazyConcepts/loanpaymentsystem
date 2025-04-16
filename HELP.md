@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-* Java 17 or later
+* Java 1.8 or later
 * Maven
 * Spring Boot
 
