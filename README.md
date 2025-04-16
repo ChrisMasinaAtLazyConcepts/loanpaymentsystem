@@ -6,7 +6,7 @@ RESTful API for loan payment processing built with Spring Boot.
 
 - Java 1.8+
 - Maven
-- PostgreSQL
+- H2
 
 ### Run Locally
 
