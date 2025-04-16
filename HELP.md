@@ -18,7 +18,7 @@ mvn clean package
 
 To run the application, navigate to the project root directory and run the following command:
 
-mvn spring-boot:run
+mvn spring-boot:run 
 
 You can also run the application using the generated JAR file:
 
@@ -33,7 +33,7 @@ Swagger UI
 The application includes Swagger UI, which provides a graphical interface for testing the API endpoints. You can access Swagger UI at http://localhost:8080/v2/api-docs.
 
 
-Example Request s
+Example Request
 
 Loan
 {
