@@ -136,7 +136,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>za.co.nextpay.firmware.selfserv.SelfServApplication</mainClass>
+							<mainClass>com.assesment.LoanPaymentApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
